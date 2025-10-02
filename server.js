@@ -9,9 +9,11 @@ connectDB();
 const app = express();
 
 app.use(cors({
-    origin: 'https://eazy-tutorial-frontend.vercel.app/', // <-- Replace with your frontend URL
+  origin: ['https://eazy-tutorial-frontend.vercel.app'], 
+  methods: ["POST","GET"],
   credentials: true,
 }));
+
 app.use(express.json());
 
 app.get('/', (req, res) => {
